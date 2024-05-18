@@ -4,6 +4,7 @@
 const int downButton = 2;
 const int selectButton = 3;
 const int upButton = 4;
+const int ledPin = 13;
 /* DOWN BUTTON */
 int downButtonState = 0;
 int lastDownButtonState = 0;
@@ -40,6 +41,7 @@ void setup() {
   pinMode(downButton, INPUT);
   pinMode(selectButton, INPUT);
   pinMode(upButton, INPUT);
+  digitalWrite(ledPin, LOW);
 }
 
 void loop() {
@@ -55,7 +57,7 @@ void loop() {
       break;
     case DONE:
       displayAnswers();
-      delay(5000);
+      // delay(5000);
       restartFunc();
       break;
   }
@@ -116,6 +118,24 @@ void displayAnswers() {
   lcd.print(year[selectedYearIndex]);
   lcd.setCursor(0, 3);
   lcd.print(group[selectedGroupIndex]);
+
+  if (course[selectedCourseIndex] == "Psychology" &&
+      year[selectedYearIndex] == "Year 2" &&
+      group[selectedGroupIndex] == "Group 2") {
+        digitalWrite(ledPin, HIGH);
+        delay(700);
+        digitalWrite(ledPin, LOW);
+        delay(700);
+        digitalWrite(ledPin, HIGH);
+        delay(700);
+        digitalWrite(ledPin, LOW);
+        delay(700);
+        digitalWrite(ledPin, HIGH);
+        delay(3000);
+        digitalWrite(ledPin, LOW);
+      } else {
+        digitalWrite(ledPin, LOW);
+      }
 }
 
 void restartFunc() {
