@@ -405,9 +405,9 @@ void displayAnswers() {
               breakTime();
             }
           }
-          // WEDNESDAY
-          else if (dayOfWeek == 3) {
-            if ((hour == 9 && minute >= 30) || (hour > 9 && hour < 11) || (hour == 11 && minute == 0)) {
+        // WEDNESDAY
+        else if (dayOfWeek == 3) {
+          if ((hour == 9 && minute >= 30) || (hour > 9 && hour < 11) || (hour == 11 && minute == 0)) {
               roomF01();
               lcd.clear();
               lcd.setCursor(0, 0);
@@ -421,10 +421,10 @@ void displayAnswers() {
               lcd.setCursor(0, 3);
               lcd.print("[9:30 - 11:00]");
               }
-            else if (hour == 11 && minute >= 0 && minute <= 15) {
+          else if (hour == 11 && minute >= 0 && minute <= 15) {
               breakTime();
               }
-            else if ((hour == 11 && minute >= 15) || (hour > 11 && hour < 12) || (hour == 12 && minute <= 45)) {
+          else if ((hour == 11 && minute >= 15) || (hour > 11 && hour < 12) || (hour == 12 && minute <= 45)) {
               roomF01();
               lcd.clear();
               lcd.setCursor(0, 0);
@@ -438,13 +438,13 @@ void displayAnswers() {
               lcd.setCursor(0, 3);
               lcd.print("[11:15 - 12:45]");
               }
-            else if ((hour == 12 && minute >= 45) || (hour > 12 && hour < 14) || (hour == 14 && minute <= 30)) {
+          else if ((hour == 12 && minute >= 45) || (hour > 12 && hour < 14) || (hour == 14 && minute <= 30)) {
               breakTime();
               }
           }
-          // THURSDAY
-          else if (dayOfWeek == 4) {
-            if ((hour == 9 && minute >= 30) || (hour > 9 && hour < 11) || (hour == 11 && minute == 0)) {
+        // THURSDAY
+        else if (dayOfWeek == 4) {
+          if ((hour == 9 && minute >= 30) || (hour > 9 && hour < 11) || (hour == 11 && minute == 0)) {
               roomF01();
               lcd.clear();
               lcd.setCursor(0, 0);
@@ -458,10 +458,10 @@ void displayAnswers() {
               lcd.setCursor(0, 3);
               lcd.print("[9:30 - 11:00]");
               }
-            else if ((hour == 11 && minute == 0) || (hour > 11 && hour < 12) || (hour == 12 && minute <= 45)) {
+          else if ((hour == 11 && minute == 0) || (hour > 11 && hour < 12) || (hour == 12 && minute <= 45)) {
               breakTime();
-              }
-            else if ((hour == 12 && minute >= 45) || (hour > 12 && hour < 14) || (hour == 14 && minute <= 30)) {
+            }
+          else if ((hour == 13 && minute == 0) || (hour > 13 && hour < 14) || (hour == 14 && minute <= 30)) {
               roomF01();
               lcd.clear();
               lcd.setCursor(0, 0);
@@ -475,8 +475,12 @@ void displayAnswers() {
               lcd.setCursor(0, 3);
               lcd.print("[12:45 - 14:30]");
               }
+            }
           }
-          }
+        
+      //else if (group[selectedGroupIndex] == "Group 2") {
+      //  }
+      }
         }
       }
 }
