@@ -251,7 +251,7 @@ void msAnmol() {
 // YEAR 1
 void debatesInPsy() {
   lcd.setCursor(0, 1);
-  lcd.print("Debates in Psychology");
+  lcd.print("Debates in Psychol..");
   }
 void OBM() {
   lcd.setCursor(0, 1);
@@ -290,7 +290,7 @@ void advancedTopicsPsychology() {
 //    TUTORS
 void mrAbel() {
   lcd.setCursor(0, 2);
-  lcd.print("Mr. Abel");
+  lcd.print("Mr. Abel <3");
   }
 void drRabia() {
   lcd.setCursor(0, 2);
@@ -341,9 +341,9 @@ void drDanish() {
   // int dayOfWeek = now.DayOfWeek();
   // int hour = now.Hour();
   //int minute = now.Minute();
-  int dayOfWeek = 4;
-  int hour = 14;
-  int minute = 22;
+  int dayOfWeek = 3;
+  int hour = 13;
+  int minute = 28;
 
 // MISC. FUNCTIONS
 void breakTime() {
@@ -705,6 +705,233 @@ void displayAnswers() {
         }
       }
     }
+  } 
+  else if (course[selectedCourseIndex] == "Psychology") {
+    // YEAR 1
+    if (year[selectedYearIndex] == "Year 1") {
+      // GROUP 1
+      if (group[selectedGroupIndex] == "Group 1") {
+        // MONDAY
+        if (dayOfWeek == 1) {
+          if ((hour == 9 && minute >= 30) || (hour == 10)) {
+            roomF01();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            debatesInPsy();
+            mrAbel();
+            lcd.setCursor(0, 3);
+            lcd.print("[9:30 - 11:00]");
+          }
+          else if (hour == 11 && minute >= 0 && minute <= 29) {
+            breakTime();
+          }
+          else if ((hour == 11 && minute >= 30) || (hour > 11 && hour < 13)) {
+            roomF01();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            debatesInPsy();
+            mrAbel();
+            lcd.setCursor(0, 3);
+            lcd.print("[11:30 - 13:00]");
+          }
+          else if ((hour == 13) || (hour == 14 && minute <= 30)) {
+            breakTime();
+          }
+        }
+        // WEDNESDAY
+        if (dayOfWeek == 3) {
+          if ((hour == 9 && minute >= 30) || (hour == 10)) {
+            roomF01();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            individualDifferences();
+            msAngeleena();
+            lcd.setCursor(0, 3);
+            lcd.print("[9:30 - 11:00]");
+          }
+          else if (hour >= 11 && hour < 13) {
+            breakTime();
+          }
+          else if ((hour == 13) || (hour == 14 && minute <= 30)) {
+            roomF01();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            individualDifferences();
+            msAngeleena();
+            lcd.setCursor(0, 3);
+            lcd.print("[13:00 - 14:30]");
+          }
+        }
+        // THURSDAY
+        if (dayOfWeek == 4) {
+          if ((hour == 9 && minute >= 30) || (hour == 10)) {
+            roomF01();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            OBM();
+            drWaheed();
+            lcd.setCursor(0, 3);
+            lcd.print("[9:30 - 11:00]");
+          }
+          else if (hour == 11 && minute <= 29) {
+            breakTime();
+          }
+          else if ((hour == 11 && minute >= 30) || (hour == 12)) {
+            roomF01();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            OBM();
+            drWaheed();
+            lcd.setCursor(0, 3);
+            lcd.print("[11:30 - 13:00]");
+          }
+          else if ((hour == 13) || (hour == 14 && minute <= 30)) {
+            breakTime();
+          }
+        }
+      }
+      // GROUP 2
+      else if (group[selectedGroupIndex] == "Group 2") {
+        // MONDAY
+        if (dayOfWeek == 1) {
+          if ((hour == 9 && minute >= 30) || (hour == 10)) {
+            roomF02();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            OBM();
+            drRabia();
+            lcd.setCursor(0, 3);
+            lcd.print("[9:30 - 11:00]");
+          }
+          else if (hour == 11 && minute >= 0 && minute <= 29) {
+            breakTime();
+          }
+          else if ((hour == 11 && minute >= 30) || (hour == 12)) {
+            roomF02();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            OBM();
+            drRabia();
+            lcd.setCursor(0, 3);
+            lcd.print("[11:30 - 13:00]");
+          }
+          else if ((hour == 13) || (hour == 14 && minute <= 30)) {
+            breakTime();
+          }
+        }
+        // TUESDAY
+        else if (dayOfWeek == 2) {
+          if ((hour == 9 && minute >= 30) || (hour == 10)) {
+            roomF02();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            individualDifferences();
+            msAngeleena();
+            lcd.setCursor(0, 3);
+            lcd.print("[9:30 - 11:00]");
+          }
+          else if (hour == 11 && minute >= 0 && minute <= 29) {
+            breakTime();
+          }
+          else if ((hour == 11 && minute >= 30) || (hour == 12)) {
+            roomF02();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            individualDifferences();
+            msAngeleena();
+            lcd.setCursor(0, 3);
+            lcd.print("[11:30 - 13:00]");
+          }
+          else if ((hour == 13) || (hour == 14 && minute <= 30)) {
+            breakTime();
+          }
+        }
+        // WEDNESDAY
+        else if (dayOfWeek == 3) {
+          if ((hour == 9 && minute >= 30) || (hour == 10) || (hour == 11 && minute <= 29)) {
+            breakTime();
+          }
+          else if ((hour == 11 && minute >= 30) || (hour == 12)) {
+            roomF02();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            debatesInPsy();
+            mrAbel();
+            lcd.setCursor(0, 3);
+            lcd.print("[11:30 - 13:00]");
+          }
+          else if ((hour == 13) || (hour == 14 && minute <= 30)) {
+            roomF02();
+            lcd.clear();
+            lcd.setCursor(0, 0);
+            lcd.print(dayOfWeekToString(dayOfWeek));
+            lcd.print(", ");
+            lcd.print(hour);
+            lcd.print(":");
+            minuteFix();
+            debatesInPsy();
+            mrAbel();
+            lcd.setCursor(0, 3);
+            lcd.print("[13:00 - 14:30]");
+          }
+        }
+      }
+    }
   } else {
       lcd.clear();
       lcd.setCursor(0, 0);
@@ -716,7 +943,7 @@ void displayAnswers() {
       lcd.setCursor(0, 1);
       lcd.print("Error 609");
     }
-}
+  }
 
 
   /*
